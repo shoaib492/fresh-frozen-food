@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1792009695540,
+      "tag": "0000_create_kitchen_orders",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1792247708446,
+      "tag": "0001_admin_catalog_content_offers",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1792247721259,
+      "tag": "0002_storage_policies_site_assets",
+      "breakpoints": true
+    }
+  ]
+}

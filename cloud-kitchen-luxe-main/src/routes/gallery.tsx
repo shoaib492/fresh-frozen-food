@@ -1,0 +1,6 @@
+import { createFileRoute } from '@tanstack/react-router'
+import { images, business, pageHead } from '@/lib/brand'
+import { Button } from '@/components/ui/button'
+import { ArrowUpRight } from 'lucide-react'
+export const Route = createFileRoute('/gallery')({head:()=>pageHead('The Gallery','Explore the real Fresh Frozen Food collection, dish photos and frozen product packaging from Pune.'),component:Gallery})
+function Gallery(){return <><div className="page-intro"><span className="eyebrow text-primary">From our collection</span><h1>A feast for the eyes.</h1><p>Our bites. Our packs. Our world of flavour.</p></div><section className="section"><div className="dish-grid">{Object.entries(images).map(([name,url])=><div className="dish-image" key={name}><img src={url} alt={`Fresh Frozen Food ${name} collection`} loading="lazy" width="600" height="540"/></div>)}</div><Button variant="editorial" className="mt-8" asChild><a href={business.instagram} target="_blank" rel="noreferrer">Find us on Instagram <ArrowUpRight/></a></Button></section></>}

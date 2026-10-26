@@ -1,0 +1,4 @@
+CREATE POLICY staff_read_site_assets ON storage.objects FOR SELECT TO authenticated USING (bucket_id = 'site-assets' AND (public.has_role(auth.uid(),'admin') OR public.has_role(auth.uid(),'staff')));
+CREATE POLICY staff_write_site_assets ON storage.objects FOR INSERT TO authenticated WITH CHECK (bucket_id = 'site-assets' AND (public.has_role(auth.uid(),'admin') OR public.has_role(auth.uid(),'staff')));
+CREATE POLICY staff_update_site_assets ON storage.objects FOR UPDATE TO authenticated USING (bucket_id = 'site-assets' AND (public.has_role(auth.uid(),'admin') OR public.has_role(auth.uid(),'staff'))) WITH CHECK (bucket_id = 'site-assets' AND (public.has_role(auth.uid(),'admin') OR public.has_role(auth.uid(),'staff')));
+CREATE POLICY staff_delete_site_assets ON storage.objects FOR DELETE TO authenticated USING (bucket_id = 'site-assets' AND (public.has_role(auth.uid(),'admin') OR public.has_role(auth.uid(),'staff')));
